@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitta+ | Lembretes</title>
+    <link rel="icon" type="image/png" href="img/cruz_com_esteto.png">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/style_acessibilidade.css">
+    <link rel="stylesheet" href="css/style_lembrete.css">
+    <script src="js/acessibilidade.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="menu"><img src="img/logo_vertical_branco.png" alt="Logo Vitta+" class="logo">
+            <div class="botao_menu"><a href="index.html">Home</a></div>
+            <div class="botao_menu"><a href="dados_corporais.html">Dados Corporais</a></div>
+            <div class="botao_menu"><a href="sinais_vitais.html">Sinais Vitais</a></div>
+            <div class="botao_menu"><a href="condicoes_saude.html">Condições de Saúde</a></div>
+            <div class="botao_menu"><a href="lembretes.html" aria-current="page">Lembretes</a></div>
+            <div class="botao_menu"><a href="anamnese.html">Anamnese</a></div>
+            <div class="botao_menu"><a href="medicamentos.html">Medicamentos</a></div>
+            <div class="botao_menu"><a href="consultas.html">Consultas</a></div>
+            <div class="botao_menu"><a href="exames.html">Exames</a></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-fonte"><span class="botao_acessibilidade__texto">A+</span><span class="somente-leitor">
+                        aumentar o tamanho da letra. Tamanho atual: normal</span></button></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-contraste" aria-pressed="false">Contraste</button></div>
+            <div class="botao_menu_entrar"><a href="entrar.html"><b>Entrar</b></a></div>
+        </div>
+        <div class="somente-leitor" id="aviso-acessibilidade" role="status" aria-live="polite"></div>
+    </header>
+
+    <main id="conteudo-principal">
+        <div class="lembretes">
+            <h1 class="lembretes__titulo">Lembretes</h1>
+            <p class="lembretes__intro">Organize seus cuidados e acompanhe os compromissos importantes para a sua saúde.</p>
+            <p class="lembretes__intro">O Vitta+ organiza e te lembra. Quem diagnostica e receita é o seu médico.</p>
+
+            <section class="lembretes__secao" aria-labelledby="novo-lembrete-titulo">
+                <h2 class="lembretes__subtitulo" id="novo-lembrete-titulo">Adicionar lembrete</h2>
+                <form action="#" method="post">
+                    <div class="lembretes__linha">
+                        <div class="lembretes__campo">
+                            <label class="lembretes__rotulo" for="lembrete-titulo">O que você precisa lembrar? <span class="lembretes__obrigatorio">(obrigatório)</span></label>
+                            <input class="lembretes__entrada" type="text" id="lembrete-titulo" name="titulo" placeholder="Ex.: Tomar medicamento" required maxlength="100">
+                        </div>
+                        <div class="lembretes__campo">
+                            <label class="lembretes__rotulo" for="lembrete-tipo">Tipo de lembrete</label>
+                            <select class="lembretes__entrada" id="lembrete-tipo" name="tipo">
+                                <option value="">Selecione</option>
+                                <option value="medicamento">Medicamento</option>
+                                <option value="consulta">Consulta ou exame</option>
+                                <option value="medicao">Medição de saúde</option>
+                                <option value="atividade">Atividade física</option>
+                                <option value="outro">Outro cuidado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset class="lembretes__bloco">
+                        <legend class="lembretes__legenda">Quando você deseja ser lembrado?</legend>
+                        <div class="lembretes__linha">
+                            <div class="lembretes__campo">
+                                <label class="lembretes__rotulo" for="lembrete-data">Data <span class="lembretes__obrigatorio">(obrigatório)</span></label>
+                                <input class="lembretes__entrada" type="date" id="lembrete-data" name="data" required>
+                            </div>
+                            <div class="lembretes__campo">
+                                <label class="lembretes__rotulo" for="lembrete-hora">Horário <span class="lembretes__obrigatorio">(obrigatório)</span></label>
+                                <input class="lembretes__entrada" type="time" id="lembrete-hora" name="hora" required>
+                            </div>
+                        </div>
+                        <div class="lembretes__campo">
+                            <label class="lembretes__rotulo" for="lembrete-repeticao">Repetição</label>
+                            <select class="lembretes__entrada" id="lembrete-repeticao" name="repeticao">
+                                <option value="nao-repetir">Não repetir</option>
+                                <option value="diariamente">Todos os dias</option>
+                                <option value="semanalmente">Toda semana</option>
+                                <option value="mensalmente">Todo mês</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <div class="lembretes__campo">
+                        <label class="lembretes__rotulo" for="lembrete-observacoes">Observações</label>
+                        <p class="lembretes__dica" id="lembrete-observacoes-dica">Adicione alguma informação que ajude a identificar o compromisso.</p>
+                        <textarea class="lembretes__entrada lembretes__entrada--area" id="lembrete-observacoes" name="observacoes" rows="4" aria-describedby="lembrete-observacoes-dica"></textarea>
+                    </div>
+
+                    <div class="lembretes__acoes">
+                        <button class="lembretes__botao lembretes__botao--principal" type="submit">Salvar lembrete</button>
+                        <button class="lembretes__botao lembretes__botao--secundario" type="reset">Limpar campos</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="lembretes__secao lembretes__lista" aria-labelledby="meus-lembretes-titulo">
+                <h2 class="lembretes__subtitulo" id="meus-lembretes-titulo">Meus lembretes</h2>
+                <p class="lembretes__vazio">Seus lembretes salvos aparecerão aqui.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div style="
+            background-color: rgb(52, 52, 52);
+            height: 210px;">
+            <div class="rodape">
+                <div>
+                    <b>Vitta+</b><br>Transformando informação em qualidade de vida.
+                </div>
+                <div>
+                    <b>Contato</b><br>E-mail: <a href="vittamais@gmail.com" style="color: white;">vittamais@gmail.com</a><br>São Caetano do Sul - SP
+                </div>
+            </div>
+            <div style="
+            color: white;
+            text-align: center;
+            padding-top: 12px;">
+                © 2026 Vitta+ 
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

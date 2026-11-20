@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitta+ | Cadastro</title>
+    <link rel="icon" type="image/png" href="img/cruz_com_esteto.png">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/style_acessibilidade.css">
+    <script src="js/acessibilidade.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        main {
+            background: #e4e9fc;
+            padding: 42px 18px 55px;
+            min-height: 570px;
+            box-sizing: border-box;
+        }
+
+        .cadastro {
+            width: min(100%, 560px);
+            margin: 0 auto;
+            padding: 34px 42px;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px #182b751c;
+            color: #232222;
+        }
+
+        .cadastro h1 {
+            margin: 0 0 8px;
+            text-align: center;
+            color: #3953b7;
+            font-size: 30px;
+        }
+
+        .cadastro__intro {
+            margin: 0 0 25px;
+            text-align: center;
+            color: #555;
+        }
+
+        .cadastro__campo {
+            margin-bottom: 16px;
+        }
+
+        .cadastro__campo label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .cadastro__entrada {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            box-sizing: border-box;
+            border: 1px solid #b9c2e0;
+            border-radius: 7px;
+            background: #fff;
+            color: #232222;
+            font: inherit;
+        }
+
+        .cadastro__entrada:focus {
+            outline: 3px solid #e7ba17;
+            outline-offset: 2px;
+            border-color: #3953b7;
+        }
+
+        .cadastro__termos {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            margin: 5px 0 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .cadastro__termos input {
+            margin-top: 4px;
+            accent-color: #3953b7;
+        }
+
+        .cadastro__botao {
+            width: 100%;
+            padding: 13px 18px;
+            border: 0;
+            border-radius: 25px;
+            background: #3953b7;
+            color: #fff;
+            font: 700 16px 'Open Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        .cadastro__botao:hover {
+            background: #263d9a;
+        }
+
+        .cadastro__login {
+            margin: 19px 0 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .cadastro__login a {
+            color: #3953b7;
+            font-weight: 700;
+        }
+
+        .cadastro__aviso {
+            margin: 17px 0 0;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        footer .rodape__fundo {
+            background: rgb(52, 52, 52);
+            min-height: 210px;
+        }
+
+        footer .rodape__copyright {
+            color: #fff;
+            text-align: center;
+            padding: 12px 0 18px;
+        }
+
+        @media (max-width: 650px) {
+            .cadastro {
+                padding: 28px 20px;
+            }
+
+            .cadastro h1 {
+                font-size: 25px;
+            }
+
+            .menu {
+                height: auto;
+                min-height: 100px;
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 12px;
+            }
+
+            .logo {
+                margin: 0 15px 0 5px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="menu"><img src="img/logo_vertical_branco.png" alt="Logo Vitta+" class="logo">
+            <div class="botao_menu"><a href="index.html">Home</a></div>
+            <div class="botao_menu"><a href="dados_corporais.html">Dados Corporais</a></div>
+            <div class="botao_menu"><a href="sinais_vitais.html">Sinais Vitais</a></div>
+            <div class="botao_menu"><a href="condicoes_saude.html">Condições de Saúde</a></div>
+            <div class="botao_menu"><a href="lembretes.html">Lembretes</a></div>
+            <div class="botao_menu"><a href="anamnese.html">Anamnese</a></div>
+            <div class="botao_menu"><a href="medicamentos.html">Medicamentos</a></div>
+            <div class="botao_menu"><a href="consultas.html">Consultas</a></div>
+            <div class="botao_menu"><a href="exames.html">Exames</a></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-fonte"><span class="botao_acessibilidade__texto">A+</span><span class="somente-leitor">
+                        aumentar o tamanho da letra. Tamanho atual: normal</span></button></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-contraste" aria-pressed="false">Contraste</button></div>
+            <div class="botao_menu_entrar"><a href="entrar.html"><b>Entrar</b></a></div>
+        </div>
+        <div class="somente-leitor" id="aviso-acessibilidade" role="status" aria-live="polite"></div>
+    </header>
+
+    <main id="conteudo-principal">
+        <section class="cadastro" aria-labelledby="titulo-cadastro">
+            <h1 id="titulo-cadastro">Crie sua conta no Vitta+</h1>
+            <p class="cadastro__intro">Preencha seus dados para começar a cuidar da sua saúde.</p>
+            <form action="#" method="post">
+                <div class="cadastro__campo">
+                    <label for="nome">Nome</label>
+                    <input class="cadastro__entrada" type="text" id="nome" name="nome" autocomplete="name" required>
+                </div>
+                <div class="cadastro__campo">
+                    <label for="nome-usuario">Nome de usuário</label>
+                    <input class="cadastro__entrada" type="text" id="nome-usuario" name="nome_usuario" required>
+                </div>
+                <div class="cadastro__campo">
+                    <label for="email">E-mail</label>
+                    <input class="cadastro__entrada" type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="cadastro__campo">
+                    <label for="senha">Senha</label>
+                    <input class="cadastro__entrada" type="password" id="senha" name="senha_hash"
+                        autocomplete="new-password" required>
+                </div>
+                <div class="cadastro__campo">
+                    <label for="nascimento">Data de nascimento</label>
+                    <input class="cadastro__entrada" type="date" id="nascimento" name="data_nascimento"
+                        autocomplete="bday" required>
+                </div>
+                <div class="cadastro__campo">
+                    <label for="regiao">Região</label>
+                    <input class="cadastro__entrada" type="text" id="regiao" name="regiao" maxlength="1" required>
+                </div>
+                <div class="cadastro__campo">
+                    <label for="fuso-horario">Fuso horário</label>
+                    <input class="cadastro__entrada" type="text" id="fuso-horario" name="fuso_horario"
+                        placeholder="Ex.: America/Sao_Paulo" required>
+                </div>
+                <button class="cadastro__botao" type="submit">Criar minha conta</button>
+            </form>
+            <p class="cadastro__login">Já possui uma conta? <a href="login.html?perfil=usuario">Faça login</a></p>
+            <p class="cadastro__aviso">Cadastro destinado exclusivamente a usuários da plataforma.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div style="
+            background-color: rgb(52, 52, 52);
+            height: 210px;">
+            <div class="rodape">
+                <div>
+                    <b>Vitta+</b><br>Transformando informação em qualidade de vida.
+                </div>
+                <div>
+                    <b>Contato</b><br>E-mail: <a href="vittamais@gmail.com"
+                        style="color: white;">vittamais@gmail.com</a><br>São Caetano do Sul - SP
+                </div>
+            </div>
+            <div style="
+            color: white;
+            text-align: center;
+            padding-top: 12px;">
+                © 2026 Vitta+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

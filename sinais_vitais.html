@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitta+ | Home</title>
+    <link rel="icon" type="image/png" href="img/cruz_com_esteto.png">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/style_acessibilidade.css">
+    <link rel="stylesheet" href="css/style_sinais_vitais.css">
+    <script src="js/acessibilidade.js" defer></script>
+    <link rel="icon" type="image/png" href="img/globo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="menu"><img src="img/logo_vertical_branco.png" alt="Logo Vitta+" class="logo">
+            <div class="botao_menu"><a href="index.html">Home</a></div>
+            <div class="botao_menu"><a href="dados_corporais.html">Dados Corporais</a></div>
+            <div class="botao_menu"><a href="sinais_vitais.html" aria-current="page">Sinais Vitais</a></div>
+            <div class="botao_menu"><a href="condicoes_saude.html">Condições de Saúde</a></div>
+            <div class="botao_menu"><a href="lembretes.html">Lembretes</a></div>
+            <div class="botao_menu"><a href="anamnese.html">Anamnese</a></div>
+            <div class="botao_menu"><a href="medicamentos.html">Medicamentos</a></div>
+            <div class="botao_menu"><a href="consultas.html">Consultas</a></div>
+            <div class="botao_menu"><a href="exames.html">Exames</a></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-fonte"><span class="botao_acessibilidade__texto">A+</span><span class="somente-leitor">
+                        aumentar o tamanho da letra. Tamanho atual: normal</span></button></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-contraste" aria-pressed="false">Contraste</button></div>
+            <div class="botao_menu_entrar"><a href="entrar.html"><b>Entrar</b></a></div>
+        </div>
+        <div class="somente-leitor" id="aviso-acessibilidade" role="status" aria-live="polite"></div>
+    </header>
+    <main id="conteudo-principal">
+        <div class="sinais">
+            <h1 class="sinais__titulo">Sinais Vitais</h1>
+            <p class="sinais__intro">Registre as medições que você fez em casa ou em um serviço de saúde. Preencha apenas o que você mediu. A data e o horário da medição são obrigatórios.</p>
+            <p class="sinais__intro">O Vitta+ organiza e te lembra. Quem diagnostica e receita é o seu médico.</p>
+            <p class="sinais__aviso"><strong>Atenção:</strong> em caso de dor forte no peito, falta de ar intensa, desmaio ou confusão mental, não registre aqui. Ligue para o SAMU (192) ou procure um serviço de urgência.</p>
+
+            <form action="#" method="post">
+
+                <fieldset class="sinais__bloco" id="data-hora">
+                    <legend class="sinais__legenda">1. Quando você mediu?</legend>
+                    <div class="sinais__linha">
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="data-medicao">Data da medição <span class="sinais__obrigatorio">(obrigatório)</span></label>
+                            <input class="sinais__entrada" type="date" id="data-medicao" name="data_medicao" required>
+                        </div>
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="hora-medicao">Horário da medição <span class="sinais__obrigatorio">(obrigatório)</span></label>
+                            <input class="sinais__entrada" type="time" id="hora-medicao" name="hora_medicao" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="sinais__bloco" id="pressao-arterial">
+                    <legend class="sinais__legenda">2. Pressão arterial</legend>
+                    <div class="sinais__linha">
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="pressao-sistolica">Pressão máxima, sistólica (mmHg)</label>
+                            <p class="sinais__dica" id="pressao-sistolica-dica">É o primeiro número. Por exemplo, 120 em 120 por 80.</p>
+                            <input class="sinais__entrada" type="number" id="pressao-sistolica" name="pressao_sistolica" min="50" max="260" step="1" inputmode="numeric" aria-describedby="pressao-sistolica-dica">
+                        </div>
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="pressao-diastolica">Pressão mínima, diastólica (mmHg)</label>
+                            <p class="sinais__dica" id="pressao-diastolica-dica">É o segundo número. Por exemplo, 80 em 120 por 80.</p>
+                            <input class="sinais__entrada" type="number" id="pressao-diastolica" name="pressao_diastolica" min="30" max="160" step="1" inputmode="numeric" aria-describedby="pressao-diastolica-dica">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="sinais__bloco" id="coracao-respiracao">
+                    <legend class="sinais__legenda">3. Coração e respiração</legend>
+                    <div class="sinais__linha">
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="frequencia-cardiaca">Frequência cardíaca (batimentos por minuto)</label>
+                            <p class="sinais__dica" id="frequencia-cardiaca-dica">Número de batimentos do coração em um minuto.</p>
+                            <input class="sinais__entrada" type="number" id="frequencia-cardiaca" name="frequencia_cardiaca" min="20" max="250" step="1" inputmode="numeric" aria-describedby="frequencia-cardiaca-dica">
+                        </div>
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="frequencia-respiratoria">Frequência respiratória (respirações por minuto)</label>
+                            <p class="sinais__dica" id="frequencia-respiratoria-dica">Conte quantas vezes o peito sobe em um minuto.</p>
+                            <input class="sinais__entrada" type="number" id="frequencia-respiratoria" name="frequencia_respiratoria" min="5" max="60" step="1" inputmode="numeric" aria-describedby="frequencia-respiratoria-dica">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="sinais__bloco" id="temperatura-oxigenacao">
+                    <legend class="sinais__legenda">4. Temperatura e oxigenação</legend>
+                    <div class="sinais__linha">
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="temperatura">Temperatura corporal (°C)</label>
+                            <p class="sinais__dica" id="temperatura-dica">Use vírgula ou ponto para as casas decimais. Por exemplo, 36,5.</p>
+                            <input class="sinais__entrada" type="number" id="temperatura" name="temperatura" min="30" max="45" step="0.1" inputmode="decimal" aria-describedby="temperatura-dica">
+                        </div>
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="saturacao">Saturação de oxigênio (%)</label>
+                            <p class="sinais__dica" id="saturacao-dica">Valor mostrado pelo oxímetro de dedo.</p>
+                            <input class="sinais__entrada" type="number" id="saturacao" name="saturacao" min="50" max="100" step="1" inputmode="numeric" aria-describedby="saturacao-dica">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="sinais__bloco" id="glicemia">
+                    <legend class="sinais__legenda">5. Glicemia</legend>
+                    <div class="sinais__linha">
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="glicemia-valor">Glicemia (mg/dL)</label>
+                            <input class="sinais__entrada" type="number" id="glicemia-valor" name="glicemia_valor" min="20" max="600" step="1" inputmode="numeric">
+                        </div>
+                        <div class="sinais__campo">
+                            <label class="sinais__rotulo" for="glicemia-momento">Momento da medição</label>
+                            <select class="sinais__entrada" id="glicemia-momento" name="glicemia_momento">
+                                <option value="">Selecione</option>
+                                <option value="jejum">Em jejum</option>
+                                <option value="antes-refeicao">Antes de uma refeição</option>
+                                <option value="depois-refeicao">Depois de uma refeição</option>
+                                <option value="aleatorio">Em outro momento</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="sinais__bloco" id="observacoes">
+                    <legend class="sinais__legenda">6. Observações</legend>
+                    <div class="sinais__campo">
+                        <label class="sinais__rotulo" for="observacoes-texto">Anotações sobre esta medição</label>
+                        <p class="sinais__dica" id="observacoes-dica">Por exemplo: como você se sentia, se tinha acabado de se exercitar ou se tomou algum medicamento.</p>
+                        <textarea class="sinais__entrada sinais__entrada--area" id="observacoes-texto" name="observacoes" rows="4" aria-describedby="observacoes-dica"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="sinais__acoes">
+                    <button class="sinais__botao sinais__botao--principal" type="submit">Salvar registro</button>
+                    <button class="sinais__botao sinais__botao--secundario" type="reset">Limpar campos</button>
+                </div>
+            </form>
+
+            <section class="sinais__referencia" aria-labelledby="referencia-titulo">
+                <h2 class="sinais__subtitulo" id="referencia-titulo">Valores de referência</h2>
+                <p class="sinais__intro">Valores gerais para adultos em repouso. Seu médico pode indicar metas diferentes para você.</p>
+                <div class="sinais__rolagem" role="region" aria-label="Tabela de valores de referência" tabindex="0">
+                    <table class="sinais__tabela">
+                        <caption class="sinais__legenda-tabela">Valores de referência para adultos em repouso</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Sinal vital</th>
+                                <th scope="col">Referência</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Pressão arterial</th>
+                                <td>abaixo de 120/80 mmHg</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Frequência cardíaca</th>
+                                <td>60 a 100 batimentos por minuto</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Frequência respiratória</th>
+                                <td>12 a 20 respirações por minuto</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Temperatura corporal</th>
+                                <td>36,0 a 37,2 °C</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Saturação de oxigênio</th>
+                                <td>95% ou mais</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Glicemia em jejum</th>
+                                <td>70 a 99 mg/dL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div style="
+            background-color: rgb(52, 52, 52);
+            height: 210px;">
+            <div class="rodape">
+                <div>
+                    <b>Vitta+</b><br>Transformando informação em qualidade de vida.
+                </div>
+                <div>
+                    <b>Contato</b><br>E-mail: <a href="vittamais@gmail.com" style="color: white;">vittamais@gmail.com</a><br>São Caetano do Sul - SP
+                </div>
+            </div>
+            <div style="
+            color: white;
+            text-align: center;
+            padding-top: 12px;">
+                © 2026 Vitta+ 
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

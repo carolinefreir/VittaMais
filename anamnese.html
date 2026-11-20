@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitta+ | Anamnese</title>
+    <link rel="icon" type="image/png" href="img/cruz_com_esteto.png">
+    <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/style_acessibilidade.css">
+    <link rel="stylesheet" href="css/style_der_forms.css">
+    <script src="js/acessibilidade.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="menu"><img src="img/logo_vertical_branco.png" alt="Logo Vitta+" class="logo">
+            <div class="botao_menu"><a href="index.html">Home</a></div>
+            <div class="botao_menu"><a href="dados_corporais.html">Dados Corporais</a></div>
+            <div class="botao_menu"><a href="sinais_vitais.html">Sinais Vitais</a></div>
+            <div class="botao_menu"><a href="condicoes_saude.html">Condições de Saúde</a></div>
+            <div class="botao_menu"><a href="lembretes.html">Lembretes</a></div>
+            <div class="botao_menu"><a href="anamnese.html" aria-current="page">Anamnese</a></div>
+            <div class="botao_menu"><a href="medicamentos.html">Medicamentos</a></div>
+            <div class="botao_menu"><a href="consultas.html">Consultas</a></div>
+            <div class="botao_menu"><a href="exames.html">Exames</a></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-fonte"><span class="botao_acessibilidade__texto">A+</span><span class="somente-leitor">
+                        aumentar o tamanho da letra. Tamanho atual: normal</span></button></div>
+            <div class="botao_acessibilidade"><button type="button" class="botao_acessibilidade__botao"
+                    id="botao-contraste" aria-pressed="false">Contraste</button></div>
+            <div class="botao_menu_entrar"><a href="entrar.html"><b>Entrar</b></a></div>
+        </div>
+        <div class="somente-leitor" id="aviso-acessibilidade" role="status" aria-live="polite"></div>
+    </header>
+    <main id="conteudo-principal" class="der-pagina">
+        <section class="der-cartao">
+            <h1>Anamnese de saúde</h1>
+            <p class="der-intro">Registre as informações da sua anamnese conforme os campos do cadastro.</p>
+            <form class="der-form" action="#" method="post">
+                <div class="der-campo"><label for="sexo">Sexo</label><select id="sexo" name="sexo">
+                        <option value="">Selecione</option>
+                        <option value="F">Feminino</option>
+                        <option value="M">Masculino</option>
+                        <option value="O">Outro</option>
+                        <option value="N">Prefiro não informar</option>
+                    </select></div>
+                <div class="der-campo"><label for="grupo-sanguineo">Grupo sanguíneo</label><select id="grupo-sanguineo"
+                        name="grupo_sanguineo">
+                        <option value="">Selecione</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select></div>
+                <div class="der-campo der-campo--largo"><label for="alergias">Alergias</label><textarea id="alergias"
+                        name="alergias"></textarea></div>
+                <div class="der-campo der-campo--largo"><label for="historico-saude">Histórico de saúde</label><textarea
+                        id="historico-saude" name="historico_saude"></textarea></div>
+                <div class="der-campo"><label for="profissao">Profissão</label><input id="profissao" name="profissao"
+                        type="text"></div>
+                <div class="der-campo der-campo--largo"><label for="exercicio-fisico">Exercício físico</label><textarea
+                        id="exercicio-fisico" name="exercicio_fisico"></textarea></div>
+                <p class="der-nota">Os campos de identificação automática (chaves primárias) são gerados pelo sistema.
+                    Os vínculos com o usuário devem usar a conta autenticada.</p>
+                <div class="der-acoes"><button type="submit">Salvar</button><button type="reset">Limpar campos</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div style="
+            background-color: rgb(52, 52, 52);
+            height: 210px;">
+            <div class="rodape">
+                <div>
+                    <b>Vitta+</b><br>Transformando informação em qualidade de vida.
+                </div>
+                <div>
+                    <b>Contato</b><br>E-mail: <a href="vittamais@gmail.com"
+                        style="color: white;">vittamais@gmail.com</a><br>São Caetano do Sul - SP
+                </div>
+            </div>
+            <div style="
+            color: white;
+            text-align: center;
+            padding-top: 12px;">
+                © 2026 Vitta+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
