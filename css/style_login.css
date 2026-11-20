@@ -1,0 +1,134 @@
+main {
+    background-color: rgb(228, 233, 252);
+}
+
+.login {
+    max-width: 32rem;
+    margin: 0 auto;
+    padding: 3rem 1rem 4rem;
+    color: var(--texto-escuro);
+}
+
+.pagina__titulo {
+    margin: 0 0 .75rem;
+    color: var(--azul-p);
+    font-size: 1.85rem;
+    text-align: center;
+}
+
+.pagina__intro {
+    margin: 0 0 1.5rem;
+    text-align: center;
+}
+
+.login__formulario {
+    padding: 2rem;
+    border-top: 5px solid var(--azul-p);
+    background: white;
+}
+
+.login__campo {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin-bottom: 1.25rem;
+}
+
+.login__campo label {
+    font-weight: 600;
+}
+
+.login__entrada {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: .5rem .75rem;
+    border: 2px solid var(--azul-p);
+    border-radius: .25rem;
+    background: white;
+    color: var(--texto-escuro);
+    font: inherit;
+}
+
+.login__botao {
+    width: 100%;
+    min-height: 2.75rem;
+    background-color: var(--amarelo-p);
+    border-radius: 20px;
+    font-size: 15px;
+    border: 2px solid var(--azul-p);
+}
+
+.login__botao:hover {
+    transition: 0.3s;
+    background-color: var(--azul-p);
+    color: white;
+}
+
+.login__ajuda {
+    margin: 1rem 0 0;
+    text-align: center;
+}
+
+.login__ajuda a,
+.acesso__retorno a {
+    color: var(--azul-p);
+    font-weight: 600;
+}
+
+.acesso__retorno {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.rodape__fundo {
+    background-color: rgb(52, 52, 52);
+}
+
+.rodape {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem 1rem 1.5rem;
+    color: white;
+}
+
+.rodape a {
+    color: white;
+}
+
+.rodape__copyright {
+    padding: .75rem 1rem 1rem;
+    color: white;
+    text-align: center;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--amarelo-p);
+    outline-offset: 3px;
+}
+
+@media(min-width:60rem) {
+    .rodape__fundo {
+        min-height: 210px;
+    }
+
+    .rodape {
+        height: 120px;
+        flex-wrap: nowrap;
+        gap: 100px;
+        padding: 40px 0 0 250px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .botao_menu:hover,
+    .botao_menu_entrar:hover {
+        transition: none;
+        transform: none;
+    }
+}

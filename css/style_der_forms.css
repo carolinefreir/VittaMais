@@ -1,0 +1,118 @@
+/* Formulários novos: mesmos padrões visuais dos formulários originais do Vitta+ */
+
+.der-pagina {
+  background-color: rgb(228, 233, 252);
+  min-height: 570px;
+  color: var(--texto-escuro);
+  line-height: 1.6;
+}
+
+.der-cartao {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  color: var(--texto-escuro);
+  line-height: 1.6;
+}
+
+.der-cartao h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  color: var(--azul-p);
+  text-align: left;
+}
+
+.der-intro {
+  margin: 0 0 1rem;
+  color: var(--texto-escuro);
+  text-align: left;
+}
+
+.der-form {
+  display: block;
+}
+
+.der-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin: 0 0 1.25rem;
+  min-width: 0;
+}
+
+.der-campo label {
+  font-weight: 600;
+  color: var(--texto-escuro);
+}
+
+.der-campo input,
+.der-campo select,
+.der-campo textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--azul-p);
+  border-radius: 0.25rem;
+  background-color: white;
+  color: var(--texto-escuro);
+  font: inherit;
+}
+
+.der-campo textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.der-nota {
+  margin: 0 0 1.25rem;
+  color: var(--texto-escuro);
+  font-size: 0.875rem;
+}
+
+.der-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.der-acoes button {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--amarelo-p);
+  border-radius: 1000px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: var(--amarelo-p);
+  color: var(--texto-sobre-amarelo);
+}
+
+.der-acoes button:hover {
+  background-color: transparent;
+  color: var(--azul-p);
+}
+
+.der-acoes button[type="reset"] {
+  background-color: transparent;
+  color: var(--azul-p);
+}
+
+.der-acoes button[type="reset"]:hover {
+  background-color: var(--amarelo-p);
+  color: var(--texto-sobre-amarelo);
+}
+
+.der-campo input:focus-visible,
+.der-campo select:focus-visible,
+.der-campo textarea:focus-visible,
+.der-acoes button:focus-visible {
+  outline: 3px solid var(--amarelo-p);
+  outline-offset: 3px;
+}
+
+@media (max-width: 39.99rem) {
+  .der-cartao h1 { font-size: 1.5rem; }
+  .der-acoes button { width: 100%; }
+}

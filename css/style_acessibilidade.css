@@ -1,0 +1,297 @@
+/* ==========================================================
+   Acessibilidade: tamanho da letra e alto contraste
+   Carregado depois do CSS de cada página. Sem cor nova:
+   usa as variáveis de style_index.css e as palavras black e white.
+   ========================================================== */
+
+/* Texto visível só para leitores de tela */
+.somente-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Botões no menu */
+.botao_acessibilidade {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.botao_acessibilidade__botao {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 8px 20px;
+  border-radius: 1000px;
+  border: 1px solid var(--texto-branco);
+  color: var(--texto-branco);
+  font-size: 95%;
+  font-weight: 600;
+  height: 40px;
+  background-color: transparent;
+}
+
+.botao_acessibilidade__botao:hover,
+.botao_acessibilidade__botao[aria-pressed="true"] {
+  background-color: var(--texto-branco);
+  color: var(--azul-menu);
+  transition: 0.4s;
+}
+
+.botao_acessibilidade__botao:focus-visible {
+  outline: 3px solid var(--amarelo-p);
+  outline-offset: 3px;
+}
+
+/* Menu quebra de linha quando faltar espaço (botões novos e letra maior) */
+.menu {
+  height: auto;
+  min-height: 100px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+/* Tamanho da letra: js/ecoconecta.js coloca a classe no <html> */
+html.fonte-grande {
+  --escala-fonte: 1.25;
+}
+
+html.fonte-muito-grande {
+  --escala-fonte: 1.5;
+}
+
+html {
+  font-size: calc(100% * var(--escala-fonte, 1));
+}
+
+.frases h1 {
+  font-size: calc(40px * var(--escala-fonte, 1));
+}
+
+.frases p {
+  font-size: calc(18px * var(--escala-fonte, 1));
+}
+
+.num_dado,
+.rodape b {
+  font-size: calc(20px * var(--escala-fonte, 1));
+}
+
+.frase_dado {
+  font-size: calc(14px * var(--escala-fonte, 1));
+}
+
+/* Alto contraste: fundo preto, texto branco e destaques em amarelo */
+html.alto-contraste {
+  --azul-p: black;
+  --azul-menu: black;
+  --texto-escuro: white;
+  --texto-claro: white;
+}
+
+html.alto-contraste body,
+html.alto-contraste main,
+html.alto-contraste .apresentacao {
+  background-color: black;
+  color: white;
+}
+
+html.alto-contraste .menu {
+  border-bottom: 5px solid var(--amarelo-p);
+}
+
+html.alto-contraste .menu a[aria-current="page"],
+html.alto-contraste .botao_menu:hover,
+html.alto-contraste .frases h1,
+html.alto-contraste [class*="__titulo"],
+html.alto-contraste [class*="__subtitulo"],
+html.alto-contraste [class*="__legenda"],
+html.alto-contraste [class*="__obrigatorio"],
+html.alto-contraste [class*="__botao--secundario"] {
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste .dados {
+  border-top-color: var(--amarelo-p);
+}
+
+html.alto-contraste main a {
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste [class*="__entrada"],
+html.alto-contraste [class*="__aviso"],
+html.alto-contraste [class*="__tabela"] {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+html.alto-contraste [class*="__tabela"] th,
+html.alto-contraste [class*="__tabela"] td {
+  border-color: white;
+}
+
+html.alto-contraste [class*="__tabela"] thead th {
+  background-color: black;
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste main a:focus-visible,
+html.alto-contraste main button:focus-visible,
+html.alto-contraste main input:focus-visible,
+html.alto-contraste main select:focus-visible,
+html.alto-contraste main textarea:focus-visible {
+  outline-color: var(--amarelo-p);
+}
+
+
+/* Alto contraste: o que era branco (cartões, formulários, avisos) vira preto,
+   para o texto branco não ficar branco sobre branco */
+html.alto-contraste .cartao,
+html.alto-contraste .acesso__card,
+html.alto-contraste .login__formulario,
+html.alto-contraste .lembretes__vazio,
+html.alto-contraste .sinais__rolagem,
+html.alto-contraste .cadastro {
+  background-color: black;
+  color: white;
+}
+
+html.alto-contraste .cartao,
+html.alto-contraste .acesso__card,
+html.alto-contraste .login__formulario {
+  border-color: white;
+}
+
+html.alto-contraste .sinais__rolagem,
+html.alto-contraste .cadastro {
+  border: 1px solid white;
+}
+
+html.alto-contraste .cartao h2,
+html.alto-contraste .cartao h3,
+html.alto-contraste .cartao__categoria,
+html.alto-contraste .acesso__card h2,
+html.alto-contraste .cadastro h1 {
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste .cadastro__intro,
+html.alto-contraste .cadastro__aviso {
+  color: white;
+}
+
+/* Alto contraste: botões amarelos com texto escuro e estados de hover legíveis */
+html.alto-contraste main a.acesso__botao,
+html.alto-contraste main a.botao_cadastrar,
+html.alto-contraste .cadastro__botao,
+html.alto-contraste .cadastro__botao:hover {
+  background-color: var(--amarelo-p);
+  color: var(--texto-sobre-amarelo);
+}
+
+html.alto-contraste main a.acesso__botao:hover {
+  background-color: transparent;
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste main a.botao_cadastrar:hover {
+  background-color: black;
+  color: white;
+}
+
+html.alto-contraste .cadastro__botao:hover {
+  background-color: white;
+}
+
+html.alto-contraste [class*="__botao--principal"]:hover {
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste [class*="__botao--secundario"]:hover {
+  color: var(--texto-sobre-amarelo);
+}
+
+/* Alto contraste: linha da tabela em destaque e caixas de seleção */
+html.alto-contraste [class*="__tabela"] tbody tr:hover {
+  background-color: white;
+  color: black;
+}
+
+html.alto-contraste main input {
+  accent-color: var(--amarelo-p);
+}
+
+/* Alto contraste: formulários .der-* (Anamnese, Condições de saúde, Consultas, Exames, Medicamentos).
+   Antes: título, campos e botão Limpar ficavam preto sobre preto ou branco sobre branco */
+html.alto-contraste .der-pagina,
+html.alto-contraste .der-cartao {
+  background-color: black;
+  color: white;
+}
+
+html.alto-contraste .der-cartao h1 {
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste .der-intro,
+html.alto-contraste .der-nota,
+html.alto-contraste .der-campo label {
+  color: white;
+}
+
+html.alto-contraste .der-campo input,
+html.alto-contraste .der-campo select,
+html.alto-contraste .der-campo textarea {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+html.alto-contraste .der-campo select option {
+  background-color: black;
+  color: white;
+}
+
+html.alto-contraste .der-campo input::placeholder,
+html.alto-contraste .der-campo textarea::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+html.alto-contraste .der-acoes button {
+  background-color: var(--amarelo-p);
+  color: var(--texto-sobre-amarelo);
+  border-color: var(--amarelo-p);
+}
+
+html.alto-contraste .der-acoes button:hover {
+  background-color: black;
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste .der-acoes button[type="reset"] {
+  background-color: black;
+  color: var(--amarelo-p);
+}
+
+html.alto-contraste .der-acoes button[type="reset"]:hover {
+  background-color: var(--amarelo-p);
+  color: var(--texto-sobre-amarelo);
+}
+
+html.alto-contraste .der-campo input:focus-visible,
+html.alto-contraste .der-campo select:focus-visible,
+html.alto-contraste .der-campo textarea:focus-visible,
+html.alto-contraste .der-acoes button:focus-visible {
+  outline-color: var(--amarelo-p);
+}
